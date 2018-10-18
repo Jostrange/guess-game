@@ -1,0 +1,79 @@
+<!doctype html>
+
+<head>
+    <title>Guessgame</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body class="body background-color">
+    <img class="img" src="C:\Users\jostra\Desktop\Class\guess-game\assets\image\download.png" alt="main-photo" />
+
+
+    <div class="left-box">box for image</div>
+
+    <div class="right-box">
+
+        <h5 class="content">Press any key to get started!</h5>
+        <h5>Wins:</h5>
+        <h5>Number of Guesses Remaining:</h5>
+        <h5>Letters Already Guessed:</h5>
+    </div>
+
+    <div>footer</div>
+
+    <script>
+        var alphabet = []
+
+        var wins = 0;
+        var losses = 0;
+        var guesses = 0;
+        var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+        console.log(computerChoice)
+        document.onkeypress = function (event) {
+            var userGuess = event.key;
+
+            if (userGuess === computerChoice) {
+                wins++;
+            } else {
+                guesses--;
+            }
+
+            if (guesses === 0) {
+                losses++
+            }
+
+            document.getElementById('wins').innerHTML = "Wins: " + wins;
+            document.getElementById('losses').innerHTML = "losses: " + losses;
+            document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
